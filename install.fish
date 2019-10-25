@@ -117,9 +117,9 @@ set devices $tmp[2..3]
 
 # Format partition
 info "Formating boot partition"
-mkfs.vfat -F32 $devices[1]
+mkfs.vfat -F32 $devices[1] > /dev/null
 info "Formating root partition"
-mkfs.ext4 -F $devices[2]
+mkfs.ext4 -F $devices[2] > /dev/null
 
 info "Mount boot directory"
 sudo mount "$devices[1]" ./boot
